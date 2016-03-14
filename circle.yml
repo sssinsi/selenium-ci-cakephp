@@ -1,0 +1,25 @@
+machine:
+  timezone: Asia/Tokyo
+  hosts: 127.0.0.1
+#environment:
+
+dependencies:
+  pre:
+    - sudo pip install --upgrade pip
+    - sudo pip install selenium
+#  override:
+#
+#  pre:
+#
+
+#database:
+#  override:
+#
+
+test:
+  pre:
+    - echo "-----start test-----"
+#  override:
+#    - python 
+  post:
+    - echo "-----end test-----"
