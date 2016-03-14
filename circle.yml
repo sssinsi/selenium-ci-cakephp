@@ -1,12 +1,16 @@
 machine:
   timezone: Asia/Tokyo
   hosts: 127.0.0.1
+  php: 5.3.3
 #environment:
 
 dependencies:
   pre:
     - sudo pip install --upgrade pip
     - sudo pip install selenium
+    - cp ~/selenium-ci-cakephp/apache_setting /etc/apache2/sites-available
+    - a2ensite apache_setting
+    - sudo service apache2 restart
 #  override:
 #
 #  pre:
@@ -20,6 +24,6 @@ test:
   pre:
     - echo "-----start test-----"
 #  override:
-#    - python 
+#    - python
   post:
     - echo "-----end test-----"
