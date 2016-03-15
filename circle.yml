@@ -39,6 +39,9 @@ dependencies:
         );
       }" > app/config/database.php
     - sudo chmod -R 777 ~/selenium-ci-cakephp/app/tmp
+    - wget http://selenium-release.storage.googleapis.com/2.52/selenium-server-standalone-2.52.0.jar
+    - java -jar selenium-server-standalone-2.52.0.jar:
+      backgroun: true
 #  override:
 #
 #  pre:
@@ -53,6 +56,6 @@ test:
   pre:
     - echo "-----start test-----"
   override:
-    - php ~/selenium-ci-cakephp/ci_tests/scripts/SeleneseTest.php
+    - ~/selenium-ci-cakephp/vendor/bin/phpunit --colors ~/selenium-ci-cakephp/ci_tests/scripts/SeleneseTest.php
   post:
     - echo "-----end test-----"
