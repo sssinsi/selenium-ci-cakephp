@@ -14,6 +14,6 @@ class SeleneseTests extends PHPUnit_Extensions_SeleniumTestCase{
 
     public function testSeleniumFile(){
         $this->open('http://localhost:8080');
-        $this->runSelenese('sample_test_case.html');
+        $this->runSelenese('./html/sample_test_case.html');
     }
 }
