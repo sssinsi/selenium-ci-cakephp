@@ -10,7 +10,7 @@ dependencies:
   pre:
     - sudo pip install --upgrade pip
     - sudo pip install selenium
-    - cp ~/selenium-ci-cakephp/apache_setting /etc/apache2/sites-available
+    - cp ~/selenium-ci-cakephp/ci_test/apache_setting /etc/apache2/sites-available
     - a2ensite apache_setting
     - sudo service apache2 restart
 
@@ -32,9 +32,10 @@ dependencies:
 #  pre:
 #
 
-#database:
-#  override:
-#
+database:
+  override:
+    - mysql -u ubuntu circle_test < ~/ci_test/test_setup.sql
+
 
 test:
   pre:
