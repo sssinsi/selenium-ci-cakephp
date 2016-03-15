@@ -17,7 +17,7 @@ dependencies:
   post:
     - echo "<?php
       class DATABASE_CONFIG {
-        var $test = array(
+        var \$test = array(
           'driver' => 'mysql',
           'persistent' => false,
           'host' => '127.0.0.1',
