@@ -53,6 +53,6 @@ test:
   pre:
     - echo "-----start test-----"
   override:
-    - php ~/selenium-ci-cakephp/ci_tests/scripts/SelenesTest.php
+    - php ~/selenium-ci-cakephp/ci_tests/scripts/SeleneseTest.php
   post:
     - echo "-----end test-----"
