@@ -34,7 +34,7 @@ dependencies:
 
 database:
   override:
-    - mysql -u ubuntu circle_test < ~/ci_settings/test_setup.sql
+    - mysql -u ubuntu circle_test < ~/selenium-ci-cakephp/ci_settings/test_setup.sql
 
 
 test:
