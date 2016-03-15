@@ -27,6 +27,7 @@ dependencies:
           'prefix' => '',
           'encoding' => 'utf8',
       }" > app/config/database.php
+    - sudo chmod -R 777 ~/selenium-ci-cakephp/app/tmp
 #  override:
 #
 #  pre:
