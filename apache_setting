@@ -8,4 +8,4 @@ Listen 80
   <FilesMatch \.php$>
     SetHandler application/x-httpd-php
   </FilesMatch>
-</VirtualHost>1
+</VirtualHost>
