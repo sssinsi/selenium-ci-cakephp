@@ -39,7 +39,7 @@ dependencies:
         );
       }" > app/config/database.php
     - sudo chmod -R 777 ~/selenium-ci-cakephp/app/tmp
-    - sudo wget http://selenium-release.storage.googleapis.com/2.52/selenium-server-standalone-2.52.0.jar
+    - wget -q http://selenium-release.storage.googleapis.com/2.52/selenium-server-standalone-2.52.0.jar
     - java -jar selenium-server-standalone-2.52.0.jar:
       backgroun: true
 #  override:
