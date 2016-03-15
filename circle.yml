@@ -17,6 +17,16 @@ dependencies:
   post:
     - echo "<?php
       class DATABASE_CONFIG {
+        var \$default = array(
+          'driver' => 'mysql',
+          'persistent' => false,
+          'host' => '127.0.0.1',
+          'login' => 'ubuntu',
+          'password' => '',
+          'database' => 'test_circle_ci',
+          'prefix' => '',
+          'encoding' => 'utf8',
+        );
         var \$test = array(
           'driver' => 'mysql',
           'persistent' => false,
