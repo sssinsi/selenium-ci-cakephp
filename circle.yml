@@ -1,7 +1,7 @@
 machine:
   timezone: Asia/Tokyo
   hosts:
-    local.cakephp.com: 127.0.0.1
+    localhost: 127.0.0.1
   php:
    version: 5.3.3
 #environment:
