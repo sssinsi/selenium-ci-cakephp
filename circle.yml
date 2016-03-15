@@ -52,7 +52,7 @@ database:
 test:
   pre:
     - echo "-----start test-----"
-#  override:
-#    - python
+  override:
+    - php ~/selenium-ci-cakephp/ci_tests/scripts/SelenesTest.php
   post:
     - echo "-----end test-----"
