@@ -2,6 +2,10 @@
 
 class SeleneseTests extends PHPUnit_Extensions_SeleniumTestCase{
 
+    protected $captureScreenshotOnFailure = true;
+    protected $screenshotPath = '/home/ubuntu/selenium-ci-cakephp/ci_tests/screenshots';
+    protected $screenshotUrl = 'http://localhost/screenshots';
+
     protected function setUp(){
         $this->setHost('127.0.0.1');
         $this->setPort(4444);

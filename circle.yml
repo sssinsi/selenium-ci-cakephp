@@ -13,6 +13,7 @@ dependencies:
     - cp ~/selenium-ci-cakephp/ci_settings/apache_setting /etc/apache2/sites-available
     - a2ensite apache_setting
     - sudo service apache2 restart
+    - sudo mkdir ~/selenium-ci-cakephp/ci_tests/screenshots
 
   post:
     - sudo chmod -R 777 ~/selenium-ci-cakephp/app/tmp
