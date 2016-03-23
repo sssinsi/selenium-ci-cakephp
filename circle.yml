@@ -58,6 +58,6 @@ test:
   pre:
     - echo "-----start test-----"
   override:
-    - ~/selenium-ci-cakephp/vendor/bin/phpunit --colors ~/selenium-ci-cakephp/ci_tests/scripts/SeleneseTest.php
+    - ~/selenium-ci-cakephp/vendor/bin/phpunit --colors ~/selenium-ci-cakephp/ci_tests/scripts/php
   post:
     - echo "-----end test-----"

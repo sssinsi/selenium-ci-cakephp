@@ -1,8 +1,6 @@
 <?php
 
 class SeleneseTests extends PHPUnit_Extensions_SeleniumTestCase{
-    // set html test directory
-    public static $seleneseDirectory = './html/';
 
     protected function setUp(){
         $this->setHost('127.0.0.1');
