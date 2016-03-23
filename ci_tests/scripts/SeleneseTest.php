@@ -14,9 +14,9 @@ class SeleneseTests extends PHPUnit_Extensions_SeleniumTestCase{
 
     public function testSeleniumFile(){
         $this->open('http://localhost:8080');
-        $this->assertEquals("CakePHP: the rapid development php framework:Home", implode(',', $this->getAllWindowTitles()));
+        $this->assertEquals("CakePHP: the rapid development php framework: Home", implode(',', $this->getAllWindowTitles()));
         try{
-            $this->assertEquals("CakePHP: the rapid development php framework:Home", implode(',', $this->getAllWindowTitles()));
+            $this->assertEquals("CakePHP: the rapid development php framework: Home", implode(',', $this->getAllWindowTitles()));
         } catch(PHPUnit_Framework_AssertionFailedError $e){
             array_push($this->verificationErrors, $e->toString());
         }
