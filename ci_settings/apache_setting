@@ -1,11 +1,11 @@
-Listen 80
+Listen 8080
 
-<VirtualHost *:80>
+<VirtualHost *:8080>
   LoadModule php5_module /home/ubuntu/.phpenv/versions/5.3.3/libexec/apache2/libphp5.so
 
   DocumentRoot /home/ubuntu/selenium-ci-cakephp
-  ServerName local.cakephp.com
+  ServerName localhost
   <FilesMatch \.php$>
     SetHandler application/x-httpd-php
   </FilesMatch>
-</VirtualHost>1
+</VirtualHost>

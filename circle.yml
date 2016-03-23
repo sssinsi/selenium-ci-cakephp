@@ -1,29 +1,64 @@
 machine:
   timezone: Asia/Tokyo
-  hosts: 127.0.0.1
-  php: 5.3.3
+  hosts:
+    localhost: 127.0.0.1
+  php:
+   version: 5.3.3
 #environment:
 
 dependencies:
   pre:
     - sudo pip install --upgrade pip
     - sudo pip install selenium
-    - cp ~/selenium-ci-cakephp/apache_setting /etc/apache2/sites-available
+    - cp ~/selenium-ci-cakephp/ci_settings/apache_setting /etc/apache2/sites-available
     - a2ensite apache_setting
     - sudo service apache2 restart
+    - sudo mkdir ~/selenium-ci-cakephp/ci_tests/screenshots
+
+  post:
+    - sudo chmod -R 777 ~/selenium-ci-cakephp/app/tmp
+    - wget http://selenium-release.storage.googleapis.com/2.52/selenium-server-standalone-2.52.0.jar
+    - echo "<?php
+      class DATABASE_CONFIG {
+        var \$default = array(
+          'driver' => 'mysql',
+          'persistent' => false,
+          'host' => '127.0.0.1',
+          'login' => 'ubuntu',
+          'password' => '',
+          'database' => 'test_circle_ci',
+          'prefix' => '',
+          'encoding' => 'utf8',
+        );
+        var \$test = array(
+          'driver' => 'mysql',
+          'persistent' => false,
+          'host' => '127.0.0.1',
+          'login' => 'ubuntu',
+          'password' => '',
+          'database' => 'test_circle_ci',
+          'prefix' => '',
+          'encoding' => 'utf8',
+        );
+      }" > app/config/database.php
+
+    - java -jar selenium-server-standalone-2.52.0.jar:
+            background: true
+
 #  override:
 #
 #  pre:
 #
 
-#database:
-#  override:
-#
+database:
+  override:
+    - mysql -u ubuntu circle_test < ~/selenium-ci-cakephp/ci_settings/test_setup.sql
+
 
 test:
   pre:
     - echo "-----start test-----"
-#  override:
-#    - python
+  override:
+    - ~/selenium-ci-cakephp/vendor/bin/phpunit --colors ~/selenium-ci-cakephp/ci_tests/scripts/php
   post:
     - echo "-----end test-----"
